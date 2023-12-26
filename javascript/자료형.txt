@@ -61,5 +61,3 @@
   - 활용
   typeof('문자열') === 'string' -> true
   typeof('문자열') === 'number' -> false
-
-  
