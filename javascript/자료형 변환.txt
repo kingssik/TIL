@@ -1,0 +1,35 @@
+// 문자열 입력 : prompt() -> 입력한 내용을 문자열로 받는다
+  prompt("메시지 문자열", "기본 입력 문자열")
+  
+  자료형 변경 함수
+  - Number() // 다른 것 -> 숫자
+  - String() // 다른 것 -> 문자열
+  - Boolean() // 다른 것 -> 불
+
+// 불 입력 : confirm()
+
+// 문자열 -> 숫자
+"123" -> 123
+Number("String") -> 숫자!
+  => Not a Number(NaN) : 숫자 자료형이지만 숫자인 값이 아닐 때 나옴(NaN의 사칙연산 결과 = NaN )
+  typeof(NaN) -> "number"
+
+// 숫자 -> 문자열
+123 -> "123"
+
+// 불 -> 문자열
+String(true) -> "true"
+String(false) -> "false"
+
+// 불 -> 숫자
+Number(true) -> 1
+Number(false) -> 0
+
+1 -> 켜져 있다, 존재하다
+0 -> 꺼져 있다, 존재하지 않다
+
+// 다른 자료형 -> 불
+1. false 가 되는 5가지 경우
+  - 0, NaN, "", null, undefined
+
+2. 이외의 경우 : true

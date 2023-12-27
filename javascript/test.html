@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  
-  <script>
-    
-  </script>
+<script>
+  let a = prompt('첫번째 숫자 입력')
+  a = Number(a) // 상수로 선언한 경우 불가능(const a = prompt('첫번째 숫자 입력') -> 불가능)
 
-</head>
-<body>
-  
-</body>
-</html>
+  const b = Number(prompt('두번째 숫자 입력'))
+
+  alert(`${a} + ${b} = ${a + b}`)
+</script>
