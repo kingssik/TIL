@@ -1,0 +1,43 @@
+// 자료에 이름을 붙이는 것 -> 상수
+  const pi = 3.141592
+    pi -> 3.141592
+  const 식별자 = '자료'
+    식별자 -> '자료'
+
+// 상수는 중복 선언 불가능
+// 상수는 선언할 때 반드시 값을 지정해야 함
+// 한 번 선언된 상수의 값은 변경 불가능
+
+// 변할 수 있는 수 -> 변수
+1. 변수 만들기
+  let 식별자
+  let 식별자 =  자료
+
+2. 변수에 값 넣기
+  변수 = 자료
+
+3. 변수도 중복 선언 불가능
+
+* lvalue, rvalue*
+> let a = 10
+- a -> left value -> lvalue -> 넣는 거
+- 10 -> right value -> rvalue -> 꺼내는 거
+
+// undefined 자료형
+1. 상수와 변수로 선언하지 않은 식별자
+  typeof(a) -> "undefined"
+
+2. 값이 없는 변수
+  let b
+  typeof(b) -> "undefined"
+
+// 증감 연산자
+1. a++ -> 현재 문장을 실행한 후에 a += 1
+  let a = 0
+  console.log(a++)  // 0 // console.log(a) => a += 1 
+  console.log(a)  // 1
+
+2. ++a -> 현재 문장을 실행하기 전에 a += 1
+  let b = 0
+  console.log(++b)  //  1 // b += 1 => console.log(b)
+  console.log(b)    // 1
