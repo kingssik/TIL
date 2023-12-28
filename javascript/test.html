@@ -1,8 +1,12 @@
 <script>
-  let a = prompt('첫번째 숫자 입력')
-  a = Number(a) // 상수로 선언한 경우 불가능(const a = prompt('첫번째 숫자 입력') -> 불가능)
+  const date = new Date()
+  const hours = date.getHours()
 
-  const b = Number(prompt('두번째 숫자 입력'))
+  if (hours < 12) {
+    alert(`현재 시간 : ${hours}, 오전`)
+  }
+  if (hours >= 12) {
+    alert(`현재 시간 : ${hours}, 오후`)
+  }
 
-  alert(`${a} + ${b} = ${a + b}`)
 </script>
