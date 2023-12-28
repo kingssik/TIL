@@ -1,5 +1,13 @@
 <script>
-  const dollar = Number(prompt("달러 단위 금액 입력"))
-  const won = dollar * 1207
-  alert(`달러: ${dollar}\n→ 원화: ${won}`)
+  const month = (new Date()).getMonth() + 1 // 0 ~ 11로 구해짐
+  
+  if (month >= 3 && month <= 5) {
+    alert(`spring`)
+  } else if (month >= 6 && month <= 8) {
+    alert(`summer`)
+  } else if (month >= 9 && month <= 11) {
+    alert(`fall`)
+  } else {
+    alert(`winter`)
+  }
 </script>
