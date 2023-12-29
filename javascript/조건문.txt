@@ -18,3 +18,14 @@ if (불 표현식) {
 } else {
   문장
 }
+
+// switch 조건문과 짧은 조건문
+1. switch 조건문
+  switch (자료) {
+    case 조건A:
+      break
+    case 조건B:
+      break
+    default:
+      break
+  }

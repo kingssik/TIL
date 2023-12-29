@@ -1,10 +1,17 @@
 <script>
-  const date = new Date()
-  const hours = date.getHours()
-
-  if (hours < 12) {
-    alert(`현재 시간 : ${hours}, 오전`)
-  } else {
-    alert(`현재 시간 : ${hours}, 오후`)
+  const x = Number(prompt('숫자 입력'))
+  switch (x) {
+    case 1:
+      alert('입력한 값 : 1')
+      break
+    case 2:
+      alert('입력한 값 : 2')
+      break
+    case 3:
+      alert('입력한 값 : 3')
+      break
+    default:
+    alert(`입력한 값 : ${x}`)
+      break
   }
 </script>
