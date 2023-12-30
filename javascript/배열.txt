@@ -1,0 +1,76 @@
+// 배열
+[요소, 요소, 요소, ..., 요소]
+  > const array = [2,'String', true, function() {}, {}, [1,2]] 
+  undefined
+  > array
+  (6) [2, 'String', true, ƒ, {…}, Array(2)]
+
+1. 배열 요소에 접근 -> 인덱스(배열 내 요소의 순서) 사용
+  배열[인덱스]
+  > const nums = [1,2,3,4,5]
+  undefined
+  > nums[0] 
+  1
+  > nums[1 + 1]
+  3
+  > nums[1 * 3]
+  4
+
+2. 배열 요소 개수 확인
+  배열.length
+  > const nums = [1,2,3,4,5]
+  undefined
+  > nums.length
+  5
+  > nums[nums.length - 1] // 배열의 마지막 요소 선택
+  5
+
+3. 배열의 메서드
+  - 배열 뒤에 요소 추가 : push(추가할 요소)
+    > nums.push(100)
+    100
+    > nums
+    (6) [1, 2, 3, 4, 5, 100]
+  
+  - 배열 중간에 요소 추가 : splice(인덱스, 0, 추가할 요소)
+  > nums.splice(1, 0, '추가')
+  []
+  > nums
+  (7) [1, '추가', 2, 3, 4, 5, 100]
+
+  - 인덱스로 배열의 요소 제거 : splice(인덱스, 1)
+    배열.splice(인덱스, 제거할 요소의 개수)
+    > nums.splice(0,1)
+    [1]
+    > nums
+    (6) ['추가', 2, 3, 4, 5, 100]
+
+  - 배열 내부에서 값의 위치 찾기 : indexOf(찾을 요소)
+  > nums.indexOf('추가')
+  0
+  * 찾으려는 요소가 배열 내부에 없을 경우 -1 출력 *
+  > nums.indexOf('hello')
+  -1
+
+  - 값으로 배열의 요소 제거 : indexOf() + splice() 활용
+    const 인덱스 = 배열.indexOf(요소)
+    배열.splice(인덱스, 1)
+
+    > const idx = nums.indexOf(100)
+    undefined
+    > nums.splice(idx, 1)
+    [100]
+    > nums
+    (5) ['추가', 2, 3, 4, 5]
+
+// 배열 정리
+1. 배열 -> 여러 개의 값을 모아 놓은 것
+2. 생성 방법 : [요소, 요소, 요소, ..., 요소]
+3. 기본 연산
+  - arr.length : 배열 요소 개수 추출
+  - arr[index] : 요소 추출
+4. 기본 메서드
+  - arr.push(element) : 뒤에 추가
+  - arr.splice(index, 0, element) : 특정 위치에 요소 추가
+  - arr.indexOf() : 특정 값의 인덱스 추출
+  - arr.splice(index, 1) : index 위치의 요소 제거
