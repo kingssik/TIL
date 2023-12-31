@@ -1,3 +1,21 @@
 <script>
-  
+  const arr = ['a', 'b', 'c']
+  // forof 반복문
+  for (const element of arr) {
+    console.log(element)
+    // a, b, c 한 줄에 한 개씩 출력 
+  }
+
+  // forin 반복문
+  for (const index in arr) {
+    console.log(index, arr[index])
+    // 0 a, 1 b, 2 c 한 줄에 한 개씩 출력
+  }
+
+  // for 반복문
+  for (let i = 0; i < arr.length; i++) {  // arr의 길이만큼 반복
+    console.log(`${i}번째 반복`)
+    const idx = i
+    const elem = arr[i]
+  }
 </script>

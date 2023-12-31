@@ -1,0 +1,17 @@
+// 반복문
+- for of / for in -> 배열 등의 객체와 사용하는 반복문
+- for -> 범용적 반복문
+- forof, forin 반복 변수는 const로 선언해도 됨
+
+1. for of 반복문
+  for (const 요소 of 배열) {
+    반복할 문장
+  }
+
+2. for in 반복문
+  for (const 인덱스 in 배열) {
+    반복할 문장
+  }
+
+3. for 반복문
+  - 반복 변수 선언시 let으로 선언
