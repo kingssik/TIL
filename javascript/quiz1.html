@@ -1,13 +1,11 @@
 <script>
-  let output = ''
-
-  // 중첩 반복문
-  for (let i =  0; i < 9; i++) {
-    for (let j = 0; j < 2 * i + 1; j++) {
-      output += '*'
-    }
-    output += '\n'
+  // 윤년을 확인하는 함수
+  const isLeapYear = function (year) {
+    return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0
   }
-  
-  console.log(output)
+
+  console.log(`2024년도는 윤년이다 : ${isLeapYear(2024)}`)
+  console.log(`2010년도는 윤년이다 : ${isLeapYear(2010)}`)
+  console.log(`2000년도는 윤년이다 : ${isLeapYear(2000)}`)
+  console.log(`1900년도는 윤년이다 : ${isLeapYear(1900)}`)
 </script>

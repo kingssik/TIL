@@ -5,3 +5,13 @@
   f() -> 함수 호출(실행)
 
   - 코드의 재사용
+
+  1. 익명 함수
+  const f = function (parameter, parameter) {
+    return value
+  }
+
+  2. 선언적 함수
+  function f (parameter, parameter) {
+    return value
+  };
