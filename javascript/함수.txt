@@ -15,3 +15,24 @@
   function f (parameter, parameter) {
     return value
   };
+
+// 나머지 매개변수(rest parameter) -> 자료형은 배열임
+  const fun = function (...parameter) {
+    console.log(parameter)
+  }
+  - 남은 매개변수가 들어오는 것 -> 일반 매개변수 앞에는 사용 불가
+  ex)
+  const wrong = function (...parameter, a, b) {    
+  }
+  실행할 경우 Uncaught SyntaxError : Rest parameter must be last formal parameter 발생
+
+// 전개 연산자 : 함수 호출
+  const func = function (a, b, c) {
+    console.log(a,b,c)
+  }
+  const a = [1,2,3]
+  func(a[0], a[1], a[2])
+  func(...a)
+
+  - 배열 앞에 ...을 입력해서 함수를 호출할 수 있게 하는 문법
+    -> 배열에 있는 내용을 전개해서 실행할 수 있게 해줌 ㅇㅋ?

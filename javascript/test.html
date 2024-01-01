@@ -29,4 +29,15 @@
   console.log(`합 : ${sum(10)}`)
   console.log(`합 : ${sum(20)}`)
   console.log(`합 : ${sum(30)}`)
+
+  // 나머지 매개변수(rest parameter)
+  const func = function (a, b, ...parameter) {
+    console.log(parameter)
+  }
+
+  func()
+  func(1)
+  func(1, 2)
+  func(1, 2, 3)
+  func(1, 2, 3, 4)
 </script>
