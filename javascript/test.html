@@ -1,45 +1,32 @@
 <script>
-  const arr = ['a', 'b', 'c']
-  // forof 반복문
-  for (const element of arr) {
-    console.log(element)
-    // a, b, c 한 줄에 한 개씩 출력 
+  // 프로시저 형태의 함수(매개변수를 갖지 않는 함수)
+  const f1 = function () {
+    console.log(`hi + ${x}`)
+    console.log(`hi + ${x}`)
+    console.log(`hi + ${x}`)
   }
 
-  // forin 반복문
-  for (const index in arr) {
-    console.log(index, arr[index])
-    // 0 a, 1 b, 2 c 한 줄에 한 개씩 출력
+  const x = 10
+  f1() // 호출
+
+  // 수학적 함수
+  const f2 = function (x) { // x : 매개변수(parameter)
+    return x + 5  // 리턴
   }
 
-  // for 반복문
-  for (let i = 0; i < arr.length; i++) {  // arr의 길이만큼 반복
-    console.log(`${i}번째 반복`)
-    const idx = i
-    const elem = arr[i]
+  console.log(f2(1))
+  console.log(f2(2))
+
+  // 코드의 재사용
+  const sum = function (limit) {
+    let output = 0
+    for (let i = 1; i <= limit; i++) {
+      output += i
+    }
+    return output
   }
 
-  // while 반복문
-  let i = 0
-  while (confirm('계속 진행하실?')) {
-    alert(`${i}번째 반복`)
-    i++
-  }
-
-  // break 사용 예시
-  let j = 0
-  while (j < 10) {
-    j++
-    alert(`${j}번째 반복`)
-    break
-  }
-
-  // break 사용 예시
-  let k = 0
-  while (k < 10) {
-    k++
-    alert(`${k}번째 반복`)
-    continue 
-    alert('현재 반복 끝')
-  }
+  console.log(`합 : ${sum(10)}`)
+  console.log(`합 : ${sum(20)}`)
+  console.log(`합 : ${sum(30)}`)
 </script>
