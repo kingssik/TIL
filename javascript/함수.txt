@@ -39,3 +39,10 @@
 
 // 기본 매개변수
   func(parameter1, parameter2=default_value, parameter3=default_value)
+
+// 콜백 함수 -> 매개변수로 전달하는 함수
+  - 함수 자체를 매개변수로 전달 가능
+  - 매개변수에 분명하게 함수가 들어올 것이라고 확신할 때만 사용
+  - js에서 매개변수로 전달하는 함수 : 콜백함수
+
+  
