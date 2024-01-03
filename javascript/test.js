@@ -39,8 +39,10 @@ arr1.forEach(function (value, index) {
 // 2. filter() -> 특정 기준으로 filtering 한 배열 리턴
 let arr2 = [11,22,33,44,55,66]
 arr2 = arr2.filter(function (value) {
-  return value % 2 == 0 // 짝수인 수만 filtering
+  return value % 2 === 0 // 짝수인 수만 filtering
 })
+// 화살표 함수로 나타내면
+arr2 = arr2.filter((value) => value % 2 === 0)
 console.log(arr2)
 
 // 3. map() -> 기존의 배열 요소를 기반으로 새로운 배열을 만들어서 리턴
@@ -48,4 +50,6 @@ let arr3 = [11,22,33,44,55,66]
 arr3 = arr3.map(function (value) {
   return value + "##"
 })
+// 화살표 함수로 나타내면
+arr3 = arr3.map((value) => value + "##")
 console.log(arr3)
