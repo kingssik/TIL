@@ -48,3 +48,16 @@
 // 화살표 함수
   (parameter) => {body}
   - body에 return문 하나만 존재할 경우 {}와 return 키워드 생략 가능
+
+// 타이머 함수 -> 특정 시간 후에 일을 할 때 사용
+  - setTimeout()  => 특정 시간 후에 한 번
+    setTimeout(함수, 시간)
+  - setInterval() => 특정 시간마다
+    setInterval(함수, 시간)
+
+// 타이머 제거 함수
+  - clearTimeout(타이머ID)
+  - clearInterval(타이머ID)
+
+// 즉시 호출 함수
+  - 함수를 만든 뒤에 곧바로 호출
