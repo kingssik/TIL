@@ -1,43 +1,12 @@
 <script>
-  // 프로시저 형태의 함수(매개변수를 갖지 않는 함수)
-  const f1 = function () {
-    console.log(`hi + ${x}`)
-    console.log(`hi + ${x}`)
-    console.log(`hi + ${x}`)
-  }
+  // 엄격 모드
+  // 다른 코드에서도 엄격하게 처리하는 것 방지하기 위해 즉시 호출 함수 안에 입력
+  // 협업시 유용
+  (function () {
+    'use strict'
+  }) ()
+  a = 10
+  b = 20
 
-  const x = 10
-  f1() // 호출
-
-  // 수학적 함수
-  const f2 = function (x) { // x : 매개변수(parameter)
-    return x + 5  // 리턴
-  }
-
-  console.log(f2(1))
-  console.log(f2(2))
-
-  // 코드의 재사용
-  const sum = function (limit) {
-    let output = 0
-    for (let i = 1; i <= limit; i++) {
-      output += i
-    }
-    return output
-  }
-
-  console.log(`합 : ${sum(10)}`)
-  console.log(`합 : ${sum(20)}`)
-  console.log(`합 : ${sum(30)}`)
-
-  // 나머지 매개변수(rest parameter)
-  const func = function (a, b, ...parameter) {
-    console.log(parameter)
-  }
-
-  func()
-  func(1)
-  func(1, 2)
-  func(1, 2, 3)
-  func(1, 2, 3, 4)
+  alert(a + b)
 </script>

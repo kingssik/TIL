@@ -61,3 +61,15 @@
 
 // 즉시 호출 함수
   - 함수를 만든 뒤에 곧바로 호출
+  ex)
+  <script>
+    // 엄격 모드
+    'use strict'
+    a = 10
+    b = 20
+
+    alert(a + b)
+  </script>
+  ->  오류 발생(Uncaught ReferenceError ReferenceError: a is not defined)
+  
+  *'use strict'를 즉시 호출 함수 내부에 작성할 경우 오류 미발생*
