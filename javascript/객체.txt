@@ -1,0 +1,19 @@
+// 객체
+  - 여러가지 자료를 다루게 하는 자료형
+  - 만드는 방법
+    const object = {
+      key : value,
+      key : value,
+      key : value,
+      key : value
+    }
+    key는 식별자를 사용(* 식별자는 숫자로 시작하지 않고 기호는 $와 _만 포함)
+
+// 속성과 메서드
+  const dog = {
+    name: 'jim',
+    age: 3,
+    bark: function () { }
+  }
+  - 속성(property) : 명사적 특징(name, age)
+  - 메서드(method) : 동사적 특징(bark)
