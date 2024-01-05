@@ -21,10 +21,13 @@ const dog = {
   name: 'jim',
   age: 3,
   bark: function () {
+    console.log(`${this.name} 짖는다`)
     console.log(`${dog.name} 짖는다`)
+    // console.log(this) // dog 객체 출력
   },
   sleep: () => {
     console.log(`${dog.name} 잔다`)
+    // console.log(this) // window 객체 출력
   }
 }
 dog.bark()
