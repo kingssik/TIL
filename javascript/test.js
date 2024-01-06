@@ -1,13 +1,9 @@
-// 객체의 키와 값을 정적으로 생성
-const pet = {
-  name: 'king',
-  age: 8
+// 프로토타입을 활용한 속성과 메서드 추가
+String.prototype.value = 10
+String.prototype.contain =  function (다른문자열) {
+  return this.indexOf(다른문자열) >= 0
 }
 
-// 객체의 키와 값을 동적으로 생성
-pet.color = 'grey'
-console.log(pet)  // { name: 'king', age: 8, color: 'grey' }
-
-// 객체의 키와 값을 동적으로 제거
-delete pet.color
-console.log(pet)  // { name: 'king', age: 8}
+const a = 'string'
+// console.log(a.value)  // 출력 : 10
+console.log(`a.contain('str'): ${a.contain('str')}`)

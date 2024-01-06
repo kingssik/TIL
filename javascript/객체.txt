@@ -33,3 +33,30 @@
 
 // 객체에 동적으로 속성 제거하기
   - delete (객체).(제거할 속성)
+
+// 기본 자료형 -> stack에 값을 저장
+  - 숫자
+  - 문자열
+  - bool
+  - 속성과 메서드 소유 불가
+
+// 객체 자료형 -> stack과 heap 연결
+  - 함수
+  - 배열
+  - 객체
+  - 속성과 메서드 소유 가능
+
+// 기본 자료형을 객체 자료형으로 선언하기
+  const 객체 = new 객체 자료형 이름()
+  ex)
+    const a = new Number(10)
+    typeof(a) -> "object"
+
+    const b = new String('string')
+    typeof(b) -> "object"
+
+    const c = new Boolean(true)
+    typeof(c) -> "object"
+
+// 프로토타입을 활용한 속성과 메서드 추가
+  - prototype -> 기본 자료형에 원하는 추가 메서드를 집어넣고자 할 때 사용
