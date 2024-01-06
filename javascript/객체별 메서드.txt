@@ -1,0 +1,17 @@
+// Number 객체의 메서드
+1. toFixed() : 소수점 n번째 자릿수까지 출력
+2. isNaN() : 매개변수가 NaN(Not a Number) 이라면 true, 아니면 false 출력
+3. isFinite() : 무한인지 확인할 때
+
+// String 객체의 메서드
+1. trim() : 문자열 양쪽 끝 공백 제거
+2. split() : 문자열을 특정 기호로 분할
+
+// Math 객체의 속성과 메서드
+- 수학 관련
+1. floor() : 내림
+2. ceil() : 올림
+3. round() : 반올림
+4. max() : 최대
+5. min() : 최소
+6. random() : 0 ~ 1 사이의 임의의 수
