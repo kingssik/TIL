@@ -16,6 +16,6 @@
     publisher: 'pub3'
   }]
 
-  const output = _.sortBy(books, ['publisher', 'price'])
+  const output = _.orderBy(books, ['name'], ['desc'])
   console.log(output)
 </script>
