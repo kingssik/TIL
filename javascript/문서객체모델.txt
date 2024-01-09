@@ -1,0 +1,5 @@
+// 문서객체(HTML 요소) 모델 : HTML 요소를 조작하는 객체의 집합
+Document Object Model -> DOM
+
+DOMContentLoaded 이벤트?
+  - 웹 브라우저가 문서 객체를 모두 읽은 뒤 실행하는 이벤트
