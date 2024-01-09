@@ -4,20 +4,25 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 조작
-      const img = document.querySelector('img')
-
-      // 값 할당 -> setAttribute(속성이름, 값)
-      // img.setAttribute('src', 'https://velog.velcdn.com/images/binest03459/post/c0a2b2f3-4537-4e7e-b0ac-115c0939b177/image.png') // 표준에 없는 경우
-      img.src = "https://velog.velcdn.com/images/binest03459/post/c0a2b2f3-4537-4e7e-b0ac-115c0939b177/image.png" // 표준에 있는 속성은 바로 활용 가능
-      
-      // 값 추출 -> getAttribute(속성이름)
-      // console.log(img.getAttribute('src')) // 표준에 없는 경우
-      console.log(img.src)  // 표준에 있는 속성은 바로 활용 가능
+      const divs = document.querySelectorAll('div')
+      divs.forEach((div, key) => {
+        div.style.backgroundColor = `rgb(${key * 25.5},${key * 25.5},${key * 25.5})`
+        div.style.height = '10px'
+        console.log(div.style.height)
+      })
     })
   </script>
 </head>
 <body>
-  <img src="" alt="" 정보="">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
 </body>
 </html>

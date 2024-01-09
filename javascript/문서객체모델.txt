@@ -3,3 +3,18 @@ Document Object Model -> DOM
 
 DOMContentLoaded 이벤트?
   - 웹 브라우저가 문서 객체를 모두 읽은 뒤 실행하는 이벤트
+
+// 글자 조작
+textContent
+innerHTML
+
+// 속성 조작
+setAttribute('속성이름', '값')
+getAttribute('속성이름')
+  # 표준에 있는 속성의 경우 -> 그냥 입력
+
+// 스타일 조작
+style 속성 사용
+style.backgroundColor
+style['background-color']
+style['backgroundColor']
