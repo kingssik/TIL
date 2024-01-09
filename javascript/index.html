@@ -4,16 +4,28 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 문서 객체 조작 가능
-      const h1 = (text) => `<h1>${text}</h1>`
-      document.body.innerHTML += h1('DOMContentLoaded 이벤트 발생')
+      // 태그 선택자 -> 어떤 태그의 이름
+      document.querySelector('h1').style.color = 'blue'
+      // 아이디 선택자 -> 어떤 태그의 id 속성
+      document.querySelector('#header').style.backgroundColor = 'grey'
+      // 클래스 선택자 -> 어떤 태그의 class 속성
+      document.querySelector('.center.head').style.textAlign = 'center'
+      // 속성 선택자
+      document.querySelector('[type=text]').style.borderRadius = '10px'
+      // 후손 선택자
+      document.querySelector('body input').style.backgroundColor = 'pink'
+      // querySelector() -> 요소 하나만 추출
+
+      for (const element of document.querySelectorAll('input')) {
+        element.style.backgroundColor = 'orange'
+      }
     })
   </script>
 </head>
 <body>
-  <h1>hello</h1>
-  <script>
-    // 문서 객체 조작 가능
-  </script>
+  <h1 id="header" class="center head">hello</h1>
+  <input type="text">
+  <br>
+  <input>
 </body>
 </html>
