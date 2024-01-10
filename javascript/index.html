@@ -10,7 +10,12 @@
       header.style.color = 'blue'
       
       const body = document.querySelector('body')
-      body.appendChild(header)  // body 태그에 h1 태그 붙임
+      body.appendChild(header)  // body 태그에 header 붙임
+      setTimeout(() => {
+        // 문서 객체 제거
+        // body.removeChild(header)  // body 태그로부터 header 제거
+        header.parentNode.removeChild(header) // 부모 객체 선택 후 제거
+      }, 2000)  // 2초 후 실행
     })
   </script>
 </head>
