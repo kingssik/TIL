@@ -18,3 +18,6 @@ style 속성 사용
 style.backgroundColor
 style['background-color']
 style['backgroundColor']
+
+// 문서 객체 생성
+createElement('문서객체이름')

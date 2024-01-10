@@ -4,25 +4,17 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const divs = document.querySelectorAll('div')
-      divs.forEach((div, key) => {
-        div.style.backgroundColor = `rgb(${key * 25.5},${key * 25.5},${key * 25.5})`
-        div.style.height = '10px'
-        console.log(div.style.height)
-      })
+      // 문서 객체 생성
+      const header = document.createElement('h1') // 요소 생성
+      header.textContent = 'createElement로 만든 태그'
+      header.style.color = 'blue'
+      
+      const body = document.querySelector('body')
+      body.appendChild(header)  // body 태그에 h1 태그 붙임
     })
   </script>
 </head>
 <body>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  
 </body>
 </html>
