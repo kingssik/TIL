@@ -21,3 +21,10 @@ style['backgroundColor']
 
 // 문서 객체 생성
 createElement('문서객체이름')
+
+// 문서 객체 제거
+부모객체.removeChild(자식객체)
+문서객체.parentNode.removeChild(문서객체)
+
+// 문서 객체 이동
+부모객체.appendChild(자식객체)

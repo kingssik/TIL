@@ -4,22 +4,26 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 문서 객체 생성
-      const header = document.createElement('h1') // 요소 생성
-      header.textContent = 'createElement로 만든 태그'
-      header.style.color = 'blue'
+      // 문서 객체 이동
+      const header = document.createElement('h2')
+      header.textContent = 'hey'
       
-      const body = document.querySelector('body')
-      body.appendChild(header)  // body 태그에 header 붙임
+      const first = document.querySelector('.first')
+      const second = document.querySelector('.second')
+      first.appendChild(header) // 첫번째 h1 태그에 위치
       setTimeout(() => {
-        // 문서 객체 제거
-        // body.removeChild(header)  // body 태그로부터 header 제거
-        header.parentNode.removeChild(header) // 부모 객체 선택 후 제거
-      }, 2000)  // 2초 후 실행
+        second.appendChild(header)  // 두번째 h1 태그로 이동
+      }, 2000)
     })
   </script>
 </head>
 <body>
-  
+  <div class="first">
+    <h1>first div</h1>
+  </div>
+  <hr>
+  <div class="second">
+    <h1>second div</h1>
+  </div>
 </body>
 </html>
