@@ -4,26 +4,20 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 문서 객체 이동
-      const header = document.createElement('h2')
-      header.textContent = 'hey'
-      
-      const first = document.querySelector('.first')
-      const second = document.querySelector('.second')
-      first.appendChild(header) // 첫번째 h1 태그에 위치
-      setTimeout(() => {
-        second.appendChild(header)  // 두번째 h1 태그로 이동
-      }, 2000)
+      const header = document.createElement('h1')
+      document.body.appendChild(header)
+
+      let count = 0
+      header.style.userSelect = 'none'  // 클릭 반복 시 텍스트 선택 방지
+      header.innerText = `클릭 횟수 : ${count}`
+      header.addEventListener('click', () => {
+        count++
+        header.innerText = `클릭 횟수 : ${count}`
+      })
     })
   </script>
 </head>
 <body>
-  <div class="first">
-    <h1>first div</h1>
-  </div>
-  <hr>
-  <div class="second">
-    <h1>second div</h1>
-  </div>
+  
 </body>
 </html>
