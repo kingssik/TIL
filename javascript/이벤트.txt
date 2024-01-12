@@ -4,3 +4,8 @@ document.addEventListener(이벤트_이름, event listener)
 
 // 이벤트 제거
 document.removeEventListener(이벤트_이름, event listener)
+
+// 키보드 이벤트
+- keydown
+- keypress
+- keyup
