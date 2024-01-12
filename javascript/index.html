@@ -4,27 +4,30 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const buttonA = document.querySelector('button')
-      const buttonB = document.querySelector('input[type=button]')
-      
-      // 사용자가 버튼을 누를 때 어떤 행동을 하게 만들려면 클릭 이벤트 활용
-      buttonA.addEventListener('click', (event) => {
-        event.currentTarget.textContent += '글자'
-      })
-      buttonB.addEventListener('click', (event) => {
-        event.currentTarget.value += '글자'
+      const form = document.querySelector('form')
+      form.addEventListener('submit', (event) => {
+        const text = document.querySelector('input[type=text]')
+        if (text.value.indexOf('@') >= 0) {
+          alert('정상 제출 완료')
+        } else {
+          alert('이메일 형식 입력 필요')
+          event.preventDefault()
+        }
       })
     })
   </script>
 </head>
 <body>
-  <!-- 1. 버튼 -->
-  <!-- click 이벤트 -->
-  <button>글자</button>
-  <input type="button" value="글자">
   <!-- submit 이벤트(click도 가능) -->
+  <!-- form : 입력 양식 만들 때 사용(제출 할 때 submit 버튼 활용) -->
   <form action="">
-    <input type="submit" value="글자">
+    이메일 형식을 입력하세요.<br>
+    <!-- text 타입에 내용 입력 후에 submit 버튼 누르면 주소 변경됨(test='입력한 내용') -->
+    <!-- submit 버튼 누를 경우 입력한 내용의 데이터가 다른 페이지로 전달됨 -->
+    <input type="text" name="test" id="">
+    <input type="submit" value="제출">
+    <input type="button" value="submit 이벤트가 발생하지 않는 버튼">
+    <button>form 태그 안의 button 태그는 submit 태그와 동일하게 작동한다</button>
   </form>
 </body>
 </html>
