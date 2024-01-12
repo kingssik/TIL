@@ -14,3 +14,6 @@ document.removeEventListener(이벤트_이름, event listener)
 - event.currentTarget : 이벤트를 발생시킨 객체
 - this
 
+// 기본 이벤트 막기
+- 기본 이벤트 : 어떤 이벤트가 발생했을 때 웹 브라우저가 기본적으로 처리해주는 것
+preventDefault()

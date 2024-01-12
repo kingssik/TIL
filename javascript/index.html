@@ -4,23 +4,17 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const h1 = document.querySelector('h1')
-      const textarea = document.querySelector('textarea')
-
-      textarea.addEventListener('keyup', () => {
-        h1.textContent = `글자 수 : ${textarea.value.length}`
+      const a = document.querySelector('a')
+      a.addEventListener('click', (event) => {
+        event.preventDefault()  // 링크가 있지만 클릭해도 이동하지 않음s
       })
-      textarea.addEventListener('keyup', (event) => {
-        h1.textContent = `글자 수 : ${event.currentTarget.value.length}`
-      })
-      textarea.addEventListener('keyup',function() {
-        h1.textContent = `글자 수 : ${this.value.length}`
+      a.addEventListener('contextmenu', (event) => {
+        event.preventDefault()  // 우클릭 시 컨텍스트 메뉴 출력 이벤트 제거
       })
     })
   </script>
 </head>
 <body>
-  <h1>글자 수 : 0</h1>
-  <textarea></textarea>
+  <a href="https://www.naver.com/">Naver</a>
 </body>
 </html>
