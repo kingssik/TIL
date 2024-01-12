@@ -9,3 +9,8 @@ document.removeEventListener(이벤트_이름, event listener)
 - keydown
 - keypress
 - keyup : key가 키보드에서 떨어질 때 발생 -> 특정 키가 눌린 상태에서 발생 안 함
+
+// 이벤트 발생 객체
+- event.currentTarget : 이벤트를 발생시킨 객체
+- this
+
