@@ -4,17 +4,27 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const a = document.querySelector('a')
-      a.addEventListener('click', (event) => {
-        event.preventDefault()  // 링크가 있지만 클릭해도 이동하지 않음s
+      const buttonA = document.querySelector('button')
+      const buttonB = document.querySelector('input[type=button]')
+      
+      // 사용자가 버튼을 누를 때 어떤 행동을 하게 만들려면 클릭 이벤트 활용
+      buttonA.addEventListener('click', (event) => {
+        event.currentTarget.textContent += '글자'
       })
-      a.addEventListener('contextmenu', (event) => {
-        event.preventDefault()  // 우클릭 시 컨텍스트 메뉴 출력 이벤트 제거
+      buttonB.addEventListener('click', (event) => {
+        event.currentTarget.value += '글자'
       })
     })
   </script>
 </head>
 <body>
-  <a href="https://www.naver.com/">Naver</a>
+  <!-- 1. 버튼 -->
+  <!-- click 이벤트 -->
+  <button>글자</button>
+  <input type="button" value="글자">
+  <!-- submit 이벤트(click도 가능) -->
+  <form action="">
+    <input type="submit" value="글자">
+  </form>
 </body>
 </html>
