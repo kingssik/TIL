@@ -4,30 +4,34 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const form = document.querySelector('form')
-      form.addEventListener('submit', (event) => {
-        const text = document.querySelector('input[type=text]')
-        if (text.value.indexOf('@') >= 0) {
-          alert('정상 제출 완료')
-        } else {
-          alert('이메일 형식 입력 필요')
-          event.preventDefault()
-        }
+      const input = document.querySelector('input')
+      const textarea = document.querySelector('textarea')
+      // const button = document.querySelector('button')
+      const p = document.querySelector('p')
+
+      // value 속성 : 값 추출
+      // 키보드 이벤트 발생 순서
+      // keydown -> keypress -> 입력 양식에 값이 들어감 -> keyup
+      // change 이벤트 : 입력 양식 전체에 값 입력이 끝났을 때(엔터 쳤을 때)
+      input.addEventListener('keyup', () => {
+        p.textContent = `${Number(input.value) * 2.54}cm 로 변환됨`
       })
     })
   </script>
 </head>
 <body>
-  <!-- submit 이벤트(click도 가능) -->
-  <!-- form : 입력 양식 만들 때 사용(제출 할 때 submit 버튼 활용) -->
-  <form action="">
-    이메일 형식을 입력하세요.<br>
-    <!-- text 타입에 내용 입력 후에 submit 버튼 누르면 주소 변경됨(test='입력한 내용') -->
-    <!-- submit 버튼 누를 경우 입력한 내용의 데이터가 다른 페이지로 전달됨 -->
-    <input type="text" name="test" id="">
-    <input type="submit" value="제출">
-    <input type="button" value="submit 이벤트가 발생하지 않는 버튼">
-    <button>form 태그 안의 button 태그는 submit 태그와 동일하게 작동한다</button>
-  </form>
+  <!-- 글자 입력으로 사용할 수 있는 태그 -->
+  <!-- 한 줄 입력 -->
+  <input type="text" name="" id="">inch<br>
+  <!-- <button>계산</button> -->
+  <p></p>
+
+  <!-- 여러 줄 입력 -->
+  <!-- <textarea name="" id="" cols="30" rows="10"></textarea>inch<br> -->
+  <!-- <button>계산</button> -->
+  <!-- <p></p> -->
+  
+  <!-- contenteditable="true" -> 브라우저에서 글자 직접 수정 가능 -->
+  <!-- <p contenteditable="true">글자</p> -->
 </body>
 </html>
