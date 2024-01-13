@@ -4,34 +4,28 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const input = document.querySelector('input')
-      const textarea = document.querySelector('textarea')
-      // const button = document.querySelector('button')
+      const select = document.querySelector('select')
       const p = document.querySelector('p')
 
-      // value 속성 : 값 추출
-      // 키보드 이벤트 발생 순서
-      // keydown -> keypress -> 입력 양식에 값이 들어감 -> keyup
-      // change 이벤트 : 입력 양식 전체에 값 입력이 끝났을 때(엔터 쳤을 때)
-      input.addEventListener('keyup', () => {
-        p.textContent = `${Number(input.value) * 2.54}cm 로 변환됨`
+      select.addEventListener('change', (event) => {
+        const options = event.currentTarget.options
+        const index = options.selectedIndex
+        p.textContent = `선택 : ${options[index].textContent}`
+
+        console.log(options)
+        console.log(index)
       })
     })
   </script>
 </head>
 <body>
-  <!-- 글자 입력으로 사용할 수 있는 태그 -->
-  <!-- 한 줄 입력 -->
-  <input type="text" name="" id="">inch<br>
-  <!-- <button>계산</button> -->
-  <p></p>
-
-  <!-- 여러 줄 입력 -->
-  <!-- <textarea name="" id="" cols="30" rows="10"></textarea>inch<br> -->
-  <!-- <button>계산</button> -->
-  <!-- <p></p> -->
-  
-  <!-- contenteditable="true" -> 브라우저에서 글자 직접 수정 가능 -->
-  <!-- <p contenteditable="true">글자</p> -->
+  <!-- 입력 양식 : 선택 - select 태그 -->
+  <select name="" id="">
+    <option value="">AWS</option>
+    <option value="">k8s</option>
+    <option value="">Docker</option>
+    <option value="">kafka</option>
+  </select>
+  <p>선택 : AWS</p>
 </body>
 </html>
