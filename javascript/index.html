@@ -4,31 +4,28 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const select = document.querySelector('select')
-      const p = document.querySelector('p')
-      
-      select.addEventListener('change', (event) => {
-        const options = event.currentTarget.options
-        const arr = []
-        for (const option of options) {
-          if (option.selected) {
-            arr.push(option.textContent)
-          }
-        }
-        p.textContent = `선택  : ${arr.join(', ')}`
-      })
+      const input = document.querySelector('input')
+      const select =  document.querySelector('select')
+      const span =  document.querySelector('span')
+      const 함수 = () => {
+        const value = Number(input.value)
+        const selected = select.options[select.options.selectedIndex]
+        span.textContent = value * Number(selected.value)  
+        // selected.value에서 value -> option 태그 내부의 value
+      }
+
+      input.addEventListener('keyup', 함수)
+      select.addEventListener('change', 함수)
     })
   </script>
 </head>
 <body>
-  <!-- 입력 양식 : 선택 - select 태그 -->
-  <!-- multiple 속성 : 다중 선택 가능 -->
-  <select name="" id="" multiple>
-    <option value="">AWS</option>
-    <option value="">k8s</option>
-    <option value="">Docker</option>
-    <option value="">kafka</option>
+  <input type="text" name="" id="" value="0"> cm =
+  <span>0</span>
+  <select name="" id="">
+    <option value="10">mm</option>
+    <option value="0.01">m</option>
+    <option value="0.393701">inch</option>
   </select>
-  <p>선택 : </p>
 </body>
 </html>
