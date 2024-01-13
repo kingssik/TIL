@@ -6,26 +6,29 @@
     document.addEventListener('DOMContentLoaded', () => {
       const select = document.querySelector('select')
       const p = document.querySelector('p')
-
+      
       select.addEventListener('change', (event) => {
         const options = event.currentTarget.options
-        const index = options.selectedIndex
-        p.textContent = `선택 : ${options[index].textContent}`
-
-        console.log(options)
-        console.log(index)
+        const arr = []
+        for (const option of options) {
+          if (option.selected) {
+            arr.push(option.textContent)
+          }
+        }
+        p.textContent = `선택  : ${arr.join(', ')}`
       })
     })
   </script>
 </head>
 <body>
   <!-- 입력 양식 : 선택 - select 태그 -->
-  <select name="" id="">
+  <!-- multiple 속성 : 다중 선택 가능 -->
+  <select name="" id="" multiple>
     <option value="">AWS</option>
     <option value="">k8s</option>
     <option value="">Docker</option>
     <option value="">kafka</option>
   </select>
-  <p>선택 : AWS</p>
+  <p>선택 : </p>
 </body>
 </html>
