@@ -4,28 +4,40 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const input = document.querySelector('input')
-      const select =  document.querySelector('select')
-      const span =  document.querySelector('span')
-      const 함수 = () => {
-        const value = Number(input.value)
-        const selected = select.options[select.options.selectedIndex]
-        span.textContent = value * Number(selected.value)  
-        // selected.value에서 value -> option 태그 내부의 value
-      }
+      const checkbox = document.querySelector('input[type=checkbox]')
+      const checkboxResult = document.querySelector('h1#checkbox')
+      
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          checkboxResult.textContent = '췤!'
+        } else {
+          checkboxResult.textContent = '놉!'
+        }
+      })
 
-      input.addEventListener('keyup', 함수)
-      select.addEventListener('change', 함수)
+      const radios = document.querySelectorAll('input[type=radio][name=gender]')
+      const radioResult = document.querySelector('h1#radiobutton')
+
+      radios.forEach((radio) => {
+        radio.addEventListener('change', (event) => {
+          radioResult.textContent = event.currentTarget.value
+        })
+      })
     })
   </script>
 </head>
 <body>
-  <input type="text" name="" id="" value="0"> cm =
-  <span>0</span>
-  <select name="" id="">
-    <option value="10">mm</option>
-    <option value="0.01">m</option>
-    <option value="0.393701">inch</option>
-  </select>
+  <!-- 체크박스 : 어떤 대상의 true 또는 false -->
+  <!-- change 이벤트 활용 -->
+  <input type="checkbox" name="" id=""><br>
+  <h1 id="checkbox"></h1>
+
+  <!-- 라디오버튼 : 여러 대상 중에서 하나 선택 -->
+  <!-- change 이벤트 활용 -->
+  <!-- 하나의 그룹이라는 것을 나타내려면 name 속성에 같은 값 지정하면 됨(반드시 name 속성 값 지정) -->
+  <input type="radio" name="gender" id="" value="여성">여성<br>
+  <input type="radio" name="gender" id="" value="남성">남성<br>
+  <input type="radio" name="gender" id="" value="직접 지정">직접 지정<br>
+  <h1 id="radiobutton"></h1>
 </body>
 </html>
