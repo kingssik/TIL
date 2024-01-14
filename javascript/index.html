@@ -4,40 +4,27 @@
   <title>Document</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      let [seconds, timerId] = [0, 0]
       const checkbox = document.querySelector('input[type=checkbox]')
       const checkboxResult = document.querySelector('h1#checkbox')
       
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
-          checkboxResult.textContent = '췤!'
-        } else {
-          checkboxResult.textContent = '놉!'
+          timerId = setInterval(() => {
+            seconds += 1
+            checkboxResult.textContent = `${seconds}초`
+          }, 1000)
+        } 
+        else {
+          // 체크 해제 상태
+          clearInterval(timerId)
         }
-      })
-
-      const radios = document.querySelectorAll('input[type=radio][name=gender]')
-      const radioResult = document.querySelector('h1#radiobutton')
-
-      radios.forEach((radio) => {
-        radio.addEventListener('change', (event) => {
-          radioResult.textContent = event.currentTarget.value
-        })
       })
     })
   </script>
 </head>
 <body>
-  <!-- 체크박스 : 어떤 대상의 true 또는 false -->
-  <!-- change 이벤트 활용 -->
-  <input type="checkbox" name="" id=""><br>
-  <h1 id="checkbox"></h1>
-
-  <!-- 라디오버튼 : 여러 대상 중에서 하나 선택 -->
-  <!-- change 이벤트 활용 -->
-  <!-- 하나의 그룹이라는 것을 나타내려면 name 속성에 같은 값 지정하면 됨(반드시 name 속성 값 지정) -->
-  <input type="radio" name="gender" id="" value="여성">여성<br>
-  <input type="radio" name="gender" id="" value="남성">남성<br>
-  <input type="radio" name="gender" id="" value="직접 지정">직접 지정<br>
-  <h1 id="radiobutton"></h1>
+  <input type="checkbox" name="" id="">타이머 활성화
+  <h1 id="checkbox">0초</h1>
 </body>
 </html>
