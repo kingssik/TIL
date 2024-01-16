@@ -1,0 +1,13 @@
+// localStorage 객체
+- 메서드
+  1. localStorage.getItem('키')
+    -> 저장된 값 추출
+  
+  2. localStorage.setItem('키', '값')
+    -> 값 저장
+
+  3. localStorage.removeItem('키')
+    -> 특정 키 값 제거
+  
+  4. localStorage.clear()
+    -> 저장된 모든 값 제거
