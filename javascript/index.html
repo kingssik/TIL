@@ -3,38 +3,60 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
+    const load = () => {
+      const data = localStorage.getItem('application')
+      if (data !== null) {
+        const [color, message] = data.split(',')
+        return {
+          color: color,
+          message: message
+        }
+      } else {
+        return {
+          color: 'green',
+          message: ''
+        }
+      }
+    }
+    const save = (data) => {
+      localStorage.setItem('application', `${data.color}, ${data.message}`)
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const p = document.querySelector('p')
       const button = document.querySelector('button')
       const input = document.querySelector('input')
       const select = document.querySelector('select')
 
-      const key = localStorage.getItem('key')
-      if (key !== null) {
-        p.textContent = `이전 실행 후 마지막 값 : ${key}`
-        input.value = key
-      }
-      
-      const color = localStorage.getItem('color')
-      if (color !== null) {
-        document.body.style.backgroundColor = color
-        select.value = color
-      } else {
-        document.body.style.backgroundColor = 'green'
-      }
+      // 초기 실행
+      const data = load()
+      p.textContent = `이전 실행 후 마지막 값 : ${data.message}`
+      input.value = data.message
+      document.body.style.backgroundColor = data.color
+      select.value = data.color
 
+      // 이벤트 연결
       button.addEventListener('click', () => {
         // 저장된 요소 모두 제거
-        localStorage.clear()
+        data.color = 'green'
+        data.message = ''
+        save(data)
+        // 입력 서식 초기화
+        select.value = 'green'
+        input.value = ''
       })
       input.addEventListener('keyup', () => {
         // 입력 양식 내부 값 저장
-        localStorage.setItem('key', input.value)
+        data.message = input.value
+        save(data)
       })
       select.addEventListener('change', () => {
         const color = select.options[select.selectedIndex].value
+        // 입력 내용 반영
         document.body.style.backgroundColor = color
-        localStorage.setItem('color', color)
+        // 데이터 저장
+        data.color = color
+        save(data)
       })
     })
   </script>
