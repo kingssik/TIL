@@ -1,12 +1,15 @@
-// 객체 속성 일괄 추출
-const test = function (object) {
-  const {name, age, color, status} = { status: 'good', ...object} // 오른쪽의 객체의 속성을 추출해서 변수처럼 활용
-
-  return `${name} : ${age} : ${color} : ${status}`
+// JSON 객체
+const object = {
+  color: "green",
+  message: "hello!"
 }
+console.log(JSON.stringify(object))
+// 출력 : {"color":"green","message":"hello!"}
 
-console.log(test({
-  name: 'cheeze',
-  age: 8,
-  color: 'gold'
-}))
+const string = JSON.stringify(object)
+console.log(JSON.parse(string))
+// 출력 : { color: 'green', message: 'hello!' }
+
+const other = JSON.parse(string)
+console.log(other.color)    // green
+console.log(other.message)  // hello!

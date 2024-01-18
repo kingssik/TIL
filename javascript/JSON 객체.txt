@@ -1,0 +1,14 @@
+# JSON(JavaScript Object Notation)
+{
+  "color": "green",
+  "message": "hello!"
+}
+
+# 규정
+1. 키는 문자열만 가능
+2. 문자열은 반드시 큰따옴표
+
+# JSON 객체
+- 메서드
+  JSON.stringify() : javascript 객체 -> JSON 문자열
+  JSON.parse() : JSON 문자열 -> javascript 객체
