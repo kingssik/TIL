@@ -6,13 +6,17 @@
     // 예외 발생 상황
     document.addEventListener('DOMContentLoaded', () => {
       const h1 = document.querySelector('h1')
-      // console.log(h1) // null
-      // 기본 예외 처리
-      if (h1 === null) {
-        alert('오류 발생')
-      } else {
+      
+      // 고급 예외 처리
+      try {
         h1.textContent = '변경'
+      } catch (예외_객체) {
+        alert('오류 발생')
+        console.log(예외_객체)
+        console.log(예외_객체.name)
+        console.log(예외_객체.message)
       }
+
     })
   </script>
 </head>
