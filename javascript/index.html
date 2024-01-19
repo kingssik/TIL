@@ -3,70 +3,10 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
-    const load = () => {
-      const data = localStorage.getItem('application')
-      if (data !== null) {
-        return JSON.parse(data)
-      } else {
-        return {
-          color: 'green',
-          message: ''
-        }
-      }
-    }
     
-    const save = (data) => {
-      localStorage.setItem('application', JSON.stringify(data))
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const p = document.querySelector('p')
-      const button = document.querySelector('button')
-      const input = document.querySelector('input')
-      const select = document.querySelector('select')
-
-      // 초기 실행
-      const data = load()
-      p.textContent = `이전 실행 후 마지막 값 : ${data.message}`
-      input.value = data.message
-      document.body.style.backgroundColor = data.color
-      select.value = data.color
-
-      // 이벤트 연결
-      button.addEventListener('click', () => {
-        // 저장된 요소 모두 제거
-        data.color = 'green'
-        data.message = ''
-        save(data)
-        // 입력 서식 초기화
-        select.value = 'green'
-        input.value = ''
-      })
-      input.addEventListener('keyup', () => {
-        // 입력 양식 내부 값 저장
-        data.message = input.value
-        save(data)
-      })
-      select.addEventListener('change', () => {
-        const color = select.options[select.selectedIndex].value
-        // 입력 내용 반영
-        document.body.style.backgroundColor = color
-        // 데이터 저장
-        data.color = color
-        save(data)
-      })
-    })
   </script>
 </head>
 <body>
-  <p></p>
-  <button>제거</button>
-  <input type="text" name="" id="">
-  <!-- 드롭다운 -> 옵션 : 색 -> 페이지 배경 색상 변경 -> 저장 -->
-  <select name="" id="">
-    <option value="green">green</option>
-    <option value="red">red</option>
-    <option value="blue">blue</option>
-  </select>
+  
 </body>
 </html>

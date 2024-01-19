@@ -1,15 +1,9 @@
-// JSON 객체
-const object = {
-  color: "green",
-  message: "hello!"
-}
-console.log(JSON.stringify(object))
-// 출력 : {"color":"green","message":"hello!"}
+// console.log('hello'  // 구문 오류(괄호 짝 불일치)
 
-const string = JSON.stringify(object)
-console.log(JSON.parse(string))
-// 출력 : { color: 'green', message: 'hello!' }
-
-const other = JSON.parse(string)
-console.log(other.color)    // green
-console.log(other.message)  // hello!
+// 예외
+console.log('hello')
+console.log('hello')
+console.log('hello')
+console.log('hello')
+console.log('hello')
+console.rog('hello') // TypeError: console.rog is not a functions
