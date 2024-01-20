@@ -3,21 +3,18 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
-    // 예외 발생 상황
-    document.addEventListener('DOMContentLoaded', () => {
-      const h1 = document.querySelector('h1')
-      
-      // 고급 예외 처리
+    const func1 = () => {
       try {
-        h1.textContent = '변경'
-      } catch (예외_객체) {
-        alert('오류 발생')
-        console.log(예외_객체)
-        console.log(예외_객체.name)
-        console.log(예외_객체.message)
+        console.log('예외가 발생할 가능성이 있는 코드')
+        return
+      } catch (e) {
+        console.log('예외가 발생할 때 실행할 코드')
+      } finally {
+        console.log('무조건 실행할 코드') // return 문이 실행됐음에도 finally 때문에 무조건 실행됨
       }
-
-    })
+    }
+    
+    func1()
   </script>
 </head>
 <body>
