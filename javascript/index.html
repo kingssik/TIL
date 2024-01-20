@@ -3,18 +3,23 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
-    const func1 = () => {
-      try {
-        console.log('예외가 발생할 가능성이 있는 코드')
-        return
-      } catch (e) {
-        console.log('예외가 발생할 때 실행할 코드')
-      } finally {
-        console.log('무조건 실행할 코드') // return 문이 실행됐음에도 finally 때문에 무조건 실행됨
+    // 원의 둘레 길이를 구하는 함수
+    const getPerimeter = (r) => {
+      if (r < 0) {
+        throw '길이에 음수가 어딨음? 빡대가리임?' 
+        // throw : 예외 강제로 발생시킴 -> 프로그램 강제 종료됨
+        // 강제 종료 방지 -> try catch 구문 사용
       }
+      const pi = 3.14
+      return 2 * pi * r
     }
-    
-    func1()
+
+    try {
+      console.log(getPerimeter(-10))  // 둘레의 길이는 음수가 나올 수 없음
+    } catch (e) {
+      console.log('문제 발생')
+    }
+    console.log('프로그램이 정상적으로 종료됨')
   </script>
 </head>
 <body>
