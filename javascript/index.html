@@ -3,23 +3,28 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
-    // 원의 둘레 길이를 구하는 함수
-    const getPerimeter = (r) => {
-      if (r < 0) {
-        throw '길이에 음수가 어딨음? 빡대가리임?' 
-        // throw : 예외 강제로 발생시킴 -> 프로그램 강제 종료됨
-        // 강제 종료 방지 -> try catch 구문 사용
+    function isRequired (객체, 속성이름) {
+      if (typeof(객체[속성이름]) === 'undefined') {
+        throw `여기 ${속성이름} 매개변수에 문제가 있다 ㅇㅋ?`
       }
-      const pi = 3.14
-      return 2 * pi * r
+    }
+    // 매개변수가 잘못 들어옴 -> 예외
+    function 메일보내기(객체) {
+      // 과거의 방식
+      isRequired(객체, '발신인')
+      isRequired(객체, '수신인')
+      isRequired(객체, '내용')
+      console.log(`발신인 : ${객체.발신인}`)
+      console.log(`수신인 : ${객체.수신인}`)
+      console.log(객체.내용)
     }
 
-    try {
-      console.log(getPerimeter(-10))  // 둘레의 길이는 음수가 나올 수 없음
-    } catch (e) {
-      console.log('문제 발생')
-    }
-    console.log('프로그램이 정상적으로 종료됨')
+    메일보내기({
+      발신인: 'kim',
+      수신인: 'lee',
+      내욕: 'hello'
+    })
+
   </script>
 </head>
 <body>
