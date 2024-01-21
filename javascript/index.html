@@ -3,20 +3,16 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <script>
-    function isRequired (객체, 속성이름) {
-      if (typeof(객체[속성이름]) === 'undefined') {
-        throw `여기 ${속성이름} 매개변수에 문제가 있다 ㅇㅋ?`
-      }
-    }
-    // 매개변수가 잘못 들어옴 -> 예외
-    function 메일보내기(객체) {
-      // 과거의 방식
-      isRequired(객체, '발신인')
-      isRequired(객체, '수신인')
-      isRequired(객체, '내용')
-      console.log(`발신인 : ${객체.발신인}`)
-      console.log(`수신인 : ${객체.수신인}`)
-      console.log(객체.내용)
+    function isRequired (이름) {throw `${이름} 매개변수에 문제 있다 ㅇㅋ?`}
+
+    function 메일보내기({
+      발신인 = isRequired('발신인'),
+      수신인 = isRequired('수신인'), 
+      내용 = isRequired('내용')
+    }) {
+      console.log(`발신인 : ${발신인}`)
+      console.log(`수신인 : ${수신인}`)
+      console.log(내용)
     }
 
     메일보내기({
@@ -24,7 +20,7 @@
       수신인: 'lee',
       내욕: 'hello'
     })
-
+    
   </script>
 </head>
 <body>
