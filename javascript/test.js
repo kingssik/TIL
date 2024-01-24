@@ -6,19 +6,25 @@ class Square {
   constructor (length) {
     this.#length = length
   }
-  getArea () {
-    return this.#length * this.#length
+  
+  // getter, setter
+  get area () {return this.#length * this.#length}
+  get perimeter () {return 4 * this.#length}
+  set length (length) {
+    if (length < 0) {
+      throw '길이는 0 이상으로 해라 ㅇㅋ?'
+    }
+    this.#length = length
   }
-  getPerimeter () {
-    return 4 * this.#length
-  }
+  get length () {return this.#length}
 }
 
 const square = new Square(10)
-console.log(square.getArea())
-console.log(square.getPerimeter())
+// getter 속성, setter 속성
+console.log(square.area)
+console.log(square.perimeter)
 
-// square.#length = -10 // 외부에서 접근 불가능
-// SyntaxError: Private field '#length' must be declared in an enclosing class
-// console.log(square.getArea())
-// console.log(square.getPerimeter())
+// getter 속성, setter 속성
+console.log(square.length)
+square.length = 20
+console.log(square.length)
