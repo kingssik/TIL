@@ -1,20 +1,13 @@
+// private 메서드
 class Square {
-  // static 속성
-  static count = 0
-  
-  // static 메서드
-  static test () {
-
+  #test () {
+    console.log('private 메서드임')
   }
-
-  constructor (length) {
-    Square.count++
+  
+  constructor () {
+    this.#test()
   }
 }
 
-// 만들어진 Square 객체의 개수를 알고싶을 때
-console.log(Square.count)  // 0
-new Square()
-new Square()
-new Square()
-console.log(Square.count)  // 3
+const square = new Square()
+// square.#test() // 오류 발생
