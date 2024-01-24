@@ -1,30 +1,20 @@
-// 정사각형 클래스
 class Square {
-  // private 속성
-  #length
+  // static 속성
+  static count = 0
+  
+  // static 메서드
+  static test () {
+
+  }
 
   constructor (length) {
-    this.#length = length
+    Square.count++
   }
-  
-  // getter, setter
-  get area () {return this.#length * this.#length}
-  get perimeter () {return 4 * this.#length}
-  set length (length) {
-    if (length < 0) {
-      throw '길이는 0 이상으로 해라 ㅇㅋ?'
-    }
-    this.#length = length
-  }
-  get length () {return this.#length}
 }
 
-const square = new Square(10)
-// getter 속성, setter 속성
-console.log(square.area)
-console.log(square.perimeter)
-
-// getter 속성, setter 속성
-console.log(square.length)
-square.length = 20
-console.log(square.length)
+// 만들어진 Square 객체의 개수를 알고싶을 때
+console.log(Square.count)  // 0
+new Square()
+new Square()
+new Square()
+console.log(Square.count)  // 3
