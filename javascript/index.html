@@ -11,39 +11,25 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    // 클래스 컴포넌트 만들기
-    class Timer extends React.Component {
+    // 이벤트 연결하기
+    class App extends React.Component {
       constructor (props) { 
         super(props) 
-        // 화면에 변화하는 값을 만들 때 this.state 객체 사용
+        this.이벤트핸들러 = this.이벤트핸들러.bind(this)
         this.state = {
-          현재_시간: new Date().toLocaleString()
+          숫자: 0
         }
-        // 화면에 변화하는 값을 지정하고 반영할 때 this.setState() 사용
-        setInterval(() => {
-          this.setState({
-            현재_시간: new Date().toLocaleString()
-          })
-        }, 1000)
       }
 
       render () { 
-        return <h1>{this.state.현재_시간}</h1> 
+        return <h1 onClick={this.이벤트핸들러}>동무 {this.state.숫자}번 클릭했구나야!</h1> 
       }
 
-      componentDidMount () {
-        this.timerId = setInterval(() => {
-          this.setState({ 현재_시간: new Date().toLocaleString() })
-        }, 1000)
+      이벤트핸들러 (event) {
+        this.setState({
+          숫자: this.state.숫자 + 1
+        })
       }
-      componentWillUnMount () {
-        clearInterval(this.timerId)
-      }
-    }
-
-    class App extends React.Component {
-      constructor (props) { super(props) }
-      render () { return <Timer /> }
     }
 
     const 컴포넌트 = <App />
